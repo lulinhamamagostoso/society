@@ -1,0 +1,33 @@
+{
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "framework": null,
+  "rewrites": [
+    { "source": "/sobre", "destination": "/about-us.html" },
+    { "source": "/metodologia", "destination": "/methodology.html" },
+    { "source": "/servicos", "destination": "/services.html" },
+    { "source": "/etica", "destination": "/our-ethics.html" },
+    { "source": "/casos", "destination": "/case-studies.html" },
+    { "source": "/contato", "destination": "/contact.html" },
+    { "source": "/carreiras", "destination": "/careers.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml" }
+      ]
+    }
+  ],
+  "trailingSlash": false,
+  "cleanUrls": true
+}
